@@ -28,8 +28,8 @@ repo_string="git@github.com:${git_username}/$1.git"
 if git ls-remote $repo_string; then
     git add .
     git commit -m "Fast repo commit"
-    echo git remote add origin $repo_string
+    git remote add origin $repo_string
     git branch -M main
-    echo git push -u origin main
+    git push -u origin main
 fi
 
