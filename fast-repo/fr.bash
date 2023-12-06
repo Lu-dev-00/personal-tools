@@ -26,7 +26,8 @@ fi
 
 repo_string="git@github.com:${git_username}/$1.git"
 if git ls-remote $repo_string; then
-    git commit -am "Fast repo commit"
+    git add -A
+    git commit -m "Fast repo commit"
     git remote add origin $repo_string
     git branch -M main
     git push -u origin main
