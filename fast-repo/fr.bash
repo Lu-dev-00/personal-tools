@@ -1,4 +1,5 @@
 #!/usr/bin/bash
+cd "$(dirname "$0")"
 repo=$1
 export $(cat ./config | xargs)
 echo $git_username
@@ -25,8 +26,10 @@ fi
 
 repo_string="git@github.com:${git_username}/$1.git"
 if git ls-remote $repo_string; then
-    git remote add origin $repo_string
+    git add .
+    git commit -m "Fast repo commit"
+    echo git remote add origin $repo_string
     git branch -M main
-    git push -u origin main
+    echo git push -u origin main
 fi
 
