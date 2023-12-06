@@ -3,8 +3,7 @@ cd "$(dirname "$0")"
 repo=$1
 export $(cat ./config | xargs)
 echo $git_username
-
-
+cd ./
 
 # check if the public variable is given as an argument
 if [ -n "$2" ]; then
@@ -24,7 +23,7 @@ else
   echo "Invalid input: public must be either true or false"
 fi
 
-cd ./
+
 repo_string="git@github.com:${git_username}/$1.git"
 if git ls-remote $repo_string; then
     git add -A
