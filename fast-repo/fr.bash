@@ -24,6 +24,7 @@ else
   echo "Invalid input: public must be either true or false"
 fi
 
+cd ./
 repo_string="git@github.com:${git_username}/$1.git"
 if git ls-remote $repo_string; then
     git add -A
